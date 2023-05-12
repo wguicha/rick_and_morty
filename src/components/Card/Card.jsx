@@ -1,10 +1,10 @@
-import styles from './card.module.css'
+import styles from './Card.module.css'
 
 export default function Card(props) {
    //console.log('id: ', props.char)
    const onClose=() => window.alert('Emulamos que se cierra la card');
    return (
-      <div>
+      <div className={styles.divCard}>
          <div className={styles.divImg}>
          <button onClick={() => onClose()}>X</button>
             <div className={styles.divId}>

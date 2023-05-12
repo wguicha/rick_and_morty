@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./assets/desktop-1366x768.jpg);
+  background-size: cover;
+  background-position: center center;
+  
 }
 
 code {

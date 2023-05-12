@@ -1,7 +1,8 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    outline: none;
+    font-size: 16pt;
 }
 
 :root {
@@ -16,11 +17,17 @@
     src: url('../../assets/get_schwifty.ttf');
 }
 
+.divCard {
+    border: 1px solid red ;
+    width: 24.5vw;
+    height: 24.5vw;
+    margin: 1vw 0;
+}
+
 .divImg {
-    border: 1px solid var(--focus-color);
     border-radius: 2.5vw;
-    width: 20vw;
-    height: 20vw;
+    width: 80%;
+    height: 80%;
     position: relative;
     background-color: var(--focus-color);
     margin-bottom: 5vw;
