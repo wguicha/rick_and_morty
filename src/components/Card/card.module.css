@@ -9,7 +9,7 @@
     --focus-color: #9FFCFD;
     --strong-color: 	#7c3e1d;
     --light-color: #f9bf1e;
-    ;
+    --hightlight-color: #16ff00;
 }
 
 @font-face {
@@ -18,7 +18,6 @@
 }
 
 .divCard {
-    border: 1px solid red ;
     width: 24.5vw;
     height: 24.5vw;
     margin: 1vw 0;
@@ -128,7 +127,9 @@
 .divOriginName {
     max-width: 65%;
     position: absolute;
-    bottom: -1.1vw;
+    color: var(--hightlight-color);
+    top: 19.3vw;
+    left: 0.4vw;
     z-index: 2;
 }
 
