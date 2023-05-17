@@ -2,28 +2,28 @@ import styles from './Card.module.css'
 
 export default function Card(props) {
    //console.log('id: ', props.char)
-   const onClose=() => window.alert('Emulamos que se cierra la card');
-   
+   //const onClose=() => window.alert('Emulamos que se cierra la card');
+   const { char, id, onClose } = props;
    return (
       <div className={styles.divCard}>
          
          <div className={styles.divImg}>
                      <div className={styles.divId}>
-               <h2 className={styles.h2Id}>{props.char.id}</h2>
+               <h2 className={styles.h2Id}>{char.id}</h2>
             </div>
-            <div className={props.char.status === 'Dead' ? styles.divStatusDead : styles.divStatusAlive}>
+            <div className={char.status === 'Dead' ? styles.divStatusDead : styles.divStatusAlive}>
             </div>
-            <img src={props.char.image} alt={props.char.name + '-image'} />
+            <img src={char.image} alt={char.name + '-image'} />
             <div className={styles.divName}>
-               <h2 className={styles.h2Name}>{props.char.name}</h2>
+               <h2 className={styles.h2Name}>{char.name}</h2>
             </div>
             <div className={styles.divOriginName}>
-               <h2 className={styles.h2OriginName}>Origin: {props.char.origin.name}</h2>
-               <h2 className={styles.h2OriginName}>Specie: {props.char.species}</h2>
-               <h2 className={styles.h2OriginName}>Gender: {props.char.gender}</h2>
+               <h2 className={styles.h2OriginName}>Origin: {char.origin.name}</h2>
+               <h2 className={styles.h2OriginName}>Specie: {char.species}</h2>
+               <h2 className={styles.h2OriginName}>Gender: {char.gender}</h2>
             </div>
-            <h2 className={styles.h2OriginName}>{props.char.gender}</h2>
-            <button className={styles.buttonClose} onClick={() => onClose()}>X</button>
+            <h2 className={styles.h2OriginName}>{char.gender}</h2>
+            <button className={styles.buttonClose} onClick={() => onClose(id)}>X</button>
          </div>
          
       </div>

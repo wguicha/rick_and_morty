@@ -5,10 +5,10 @@ import axios from 'axios';
 import { useState } from 'react';
 
 function App() {
-   
+
    const [characters, setCharacters] = useState([]);
 
-   const onSearch = (id) =>{
+   const onSearch = (id) => {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
@@ -18,16 +18,16 @@ function App() {
       });
    }
 
-   const onCLose = (id) => {
-      setCharacters(characters.filter((x) => {
-         return x !== parseInt(id);
+   const onClose = (id) => {
+      setCharacters(characters.filter((char) => {
+         return char.id !== Number(id);
       }))
    }
 
    return (
       <div className='App'>
          <Nav  onSearch={onSearch}/>
-         <Cards characters={characters} />
+         <Cards characters={characters} onClose={onClose}/>
       </div>
    );
 }
