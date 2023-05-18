@@ -1,0 +1,9 @@
+.divAbout {
+    color: white;
+}
+
+.imgAbout{
+    border: 2px solid red;  
+    width: 220px;
+    height: 200px;
+}

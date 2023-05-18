@@ -10,6 +10,7 @@
     --strong-color: 	#7c3e1d;
     --light-color: #f9bf1e;
     --hightlight-color: #16ff00;
+    --blue-color: #1e06f6;
 }
 
 @font-face {
@@ -105,6 +106,7 @@
 
 .divName {
     background-image: url('../../assets/portal_img.png');
+    background-color: black;
     background-size: cover;
     background-position: center center;
     width: 60%;
@@ -114,12 +116,14 @@
     bottom: -4.5vw;
     right: -4.5vw;
     z-index: 2;
+    display: grid;
+    place-items: center;
 }
 
 .h2Name {
     font-family: rmFont;
     font-size: 2.3vw;
-    color: var(--light-color);
+    color: var(--focus-color);
     position: absolute;
     top: 2.25vw;
 }
@@ -139,9 +143,9 @@
 }
 
 .buttonClose {
-    border: 1px solid red;
     border-radius: 50%;
-    background-color: red;
+    background-color: var(--light-color);
+    color: red;
     font-size: 3vw;
     width: 20%;
     height: 20%;
