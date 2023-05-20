@@ -6,7 +6,6 @@ export default function Cards(props) {
    return (
       <div className={styles.divCards}>{
          characters.map((character) => {
-            console.log("Origin: ",character.origin.name )
             return <Card id={character.id}
                key={character.id}
                name={character.name}

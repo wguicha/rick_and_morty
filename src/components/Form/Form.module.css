@@ -1,0 +1,32 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+}
+
+.label{
+    color: white;
+}
+
+.inputIncorrect{
+    border: 2px solid red;
+    background-color: rgb(240, 130, 130);
+}
+
+.inputCorrect{
+    border: 2px solid green;
+    background-color: rgb(145, 240, 145);
+}
+
+.p {
+    color: red;
+    font-size: 0.7em;
+    text-shadow: 0.5px 0.5px 1px red, 0 0 1em white, 0 0 0.2em white;
+}
+
+.buttonSubmit {
+    margin: auto;
+    margin-top: 2vw;
+    width: 80%;
+}
