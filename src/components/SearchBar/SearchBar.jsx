@@ -8,7 +8,6 @@ export default function SearchBar(props) {
    
    const handleChange = (event) => {
       setId(event.target.value);
-      console.log(id);
    }
    return (
       <div className={styles.divWrap}>
