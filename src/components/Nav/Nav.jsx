@@ -7,12 +7,12 @@ export default function Nav(props) {
    return (
         <div className={styles.divNav}>
             <Link to="/home">
-                <button>HOME</button>
+                <button className={styles.buttonNav}>HOME</button>
             </Link>
             <Link to="/about">
-                <button>ABOUT</button>
+                <button className={styles.buttonNav}>ABOUT</button>
             </Link>
-            <SearchBar onSearch={onSearch}/>
+            <SearchBar className={styles.searchBarNav} onSearch={onSearch}/>
         </div>
    );
 }

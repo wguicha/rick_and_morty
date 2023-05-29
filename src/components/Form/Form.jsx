@@ -29,38 +29,39 @@ export default function Form(props) {
      }
 
     return (
-        <form className={styles.form}>
-            <div>
-                <label className={styles.label} htmlFor='email'>email:</label><br />
-                <input type='text'
-                    className={errors.email.length !== 0
-                                ?styles.inputIncorrect
-                                :styles.inputCorrect}
-                    name='email'
-                    value={userData.email}
-                    onChange={handleChange}>
-                </input><br />
-                    {errors.email
-                    ?errors.email.map((error) => {return <p className={styles.p}>{error}</p>})
-                    :<></>}
-            </div>
-            <div>
-                <label className={styles.label} htmlFor='password'>password:</label><br />
-                <input type='text'
-                    className={errors.password.length !== 0
-                                ?styles.inputIncorrect
-                                :styles.inputCorrect}
-                    name='password'
-                    value={userData.password}
-                    onChange={handleChange}>
-                </input>
-                {errors.password
-                    ?errors.password.map((error) => {return <p className={styles.p}>{error}</p>})
-                    :<></>}
-            </div>
-            <button className={styles.buttonSubmit} onClick={handleSubmit}>Submit</button>
-        </form>
-
+        <div className={styles.divLogin}>
+            <form className={styles.form}>
+                <div>
+                    <label className={styles.label} htmlFor='email'>email:</label><br />
+                    <input type='text'
+                        className={errors.email.length !== 0
+                                    ?styles.inputIncorrect
+                                    :styles.inputCorrect}
+                        name='email'
+                        value={userData.email}
+                        onChange={handleChange}>
+                    </input><br />
+                        {errors.email
+                        ?errors.email.map((error) => {return <p className={styles.p}>{error}</p>})
+                        :<></>}
+                </div>
+                <div>
+                    <label className={styles.label} htmlFor='password'>password:</label><br />
+                    <input type='text'
+                        className={errors.password.length !== 0
+                                    ?styles.inputIncorrect
+                                    :styles.inputCorrect}
+                        name='password'
+                        value={userData.password}
+                        onChange={handleChange}>
+                    </input>
+                    {errors.password
+                        ?errors.password.map((error) => {return <p className={styles.p}>{error}</p>})
+                        :<></>}
+                </div>
+                <button className={styles.buttonSubmit} onClick={handleSubmit}>Submit</button>
+            </form>
+        </div>
     );
 
 }

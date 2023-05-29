@@ -29,14 +29,15 @@ function App() {
    }, [access]);
 
    const onSearch = (id) => {
-      if(!validateDuplicate(id)){
+      console.log("id: ",id)
+      if(!validateDuplicate(id) && validataId(id)){
          axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
             if (data.name) {
                setCharacters((oldChars) => [...oldChars, data]);
-            } else {
-               window.alert('¡No hay personajes con este ID!');
-            }
+            } 
          });
+      } else {
+         window.alert('¡No hay personajes con este ID!');
       }
    }
 
@@ -57,6 +58,10 @@ function App() {
 
       return duplicated;
 
+   }
+
+   const validataId = (id) => {
+      if (id >826) return false;
    }
 
    return (
