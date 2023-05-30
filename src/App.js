@@ -4,6 +4,7 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import Nav from './components/Nav/Nav';
 import Form from './components/Form/Form';
+import Favorites from './components/Favorites/Favorites';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
@@ -14,11 +15,11 @@ function App() {
    const [access, setAccess] = useState(false);
    let location = useLocation();
 
-   const EMAIL = 'admin@mail.com'
-   const PASSWORD = 'abcd123'
-
+   //const EMAIL = 'admin@mail.com'
+   //const PASSWORD = 'abcd123'
+   //userData.password === PASSWORD && userData.email === EMAIL
    function login(userData) {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
+      if (true) {
          setAccess(true);
          navigate('/home');
       }
@@ -29,12 +30,13 @@ function App() {
    }, [access]);
 
    const onSearch = (id) => {
-      console.log("id: ",id)
-      if(!validateDuplicate(id) && validataId(id)){
+      if(validateDuplicate(id)){
+         window.alert('¡Este personaje ya existe!');
+      } else if (validataId(id)) {
          axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
             if (data.name) {
                setCharacters((oldChars) => [...oldChars, data]);
-            } 
+            }
          });
       } else {
          window.alert('¡No hay personajes con este ID!');
@@ -61,7 +63,7 @@ function App() {
    }
 
    const validataId = (id) => {
-      if (id >826) return false;
+      return id <= 826;
    }
 
    return (
@@ -76,6 +78,7 @@ function App() {
             <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>} />
             <Route path="/about" element={<About />} />
             <Route path="/detail/:id" element={<Detail />} />
+            <Route path="/favorites" element={<Favorites />} />
             <Route path="*" element={<About />} />
          </Routes>
       </div>

@@ -1,10 +1,9 @@
-const ADD_FAV = 'ADD_FAV';
-const REMOVE_FAV = 'REMOVE_FAV';
+import { ADD_FAV, REMOVE_FAV} from './action_types'
 
-const addFav = () => {
-    return { type: ADD_FAV}
+export const addFav = (payload) => {
+    return { type: ADD_FAV, payload: payload}
 }
 
-const removeFav = () => {
-    return { type: REMOVE_FAV}
+export const removeFav = (id) => {
+    return { type: REMOVE_FAV, payload:id}
 }

@@ -1,15 +1,42 @@
 import styles from './Card.module.css'
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addFav, removeFav } from '../../redux/actions'
+import { useState, useEffect } from 'react';
 
-export default function Card(props) {
-   //console.log('id: ', props.char)
-   //const onClose=() => window.alert('Emulamos que se cierra la card');
+function Card(props) {
    const { id, name, status, species, gender, origin, image, onClose } = props;
+   const [isFav, setIsFav] = useState(false);
+
+   function handleFavorite(){
+      if(isFav){
+         setIsFav(false);
+         props.removeFav(id);
+      } else {
+         setIsFav(true);
+         props.addFav({ id, name, status, species, gender, origin, image })
+      }
+   }
+
+   useEffect(() => {
+      props.myFavorites.forEach((fav) => {
+         if (fav.id === props.id) {
+            setIsFav(true);
+         }
+      });
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [props.myFavorites]);
+
    return (
       <div className={styles.divCard}>
          <div className={styles.divImg}>
-                     <div className={styles.divId}>
-               <h2 className={styles.h2Id}>{id}</h2>
+            <div className={styles.divFavIcon}>
+               {isFav ? (
+                  <button className={styles.h2IdRed} onClick={handleFavorite}>❤️<br/>{id}</button>
+               ) : (
+                  <button className={styles.h2Id} onClick={handleFavorite}>🤍<br/>{id}</button>
+               )
+               }
             </div>
             <div className={status === 'Dead' ? styles.divStatusDead : styles.divStatusAlive}>
             </div>
@@ -30,3 +57,22 @@ export default function Card(props) {
       </div>
    );
 }
+
+export function mapStateToProps(state){
+   return {
+      myFavorites: state.myFavorites,
+   }
+}
+
+export  function mapDispatchToProps(dispatch){
+   return {
+      addFav: function(character){
+         dispatch(addFav(character));
+      },
+      removeFav: function(id){
+         dispatch(removeFav(id));
+      },
+   }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

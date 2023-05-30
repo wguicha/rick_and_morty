@@ -46,18 +46,31 @@
 
 }
 
-.divId {
-    background-color: var(--light-color);
+.divFavIcon {
+    background-color: var(--blue-color);
     width: 20%;
-    height: 20%;
+    height: 28%;
     border-radius: 50%;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 0.1vw;
+    top: 0.15vw;
     left: 0.9vw;
     z-index: 2;
 }
 
 .h2Id {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: 1.8vw;
+    color: grey;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.h2IdRed {
     width: 100%;
     height: 100%;
     position: relative;
@@ -106,7 +119,6 @@
 
 .divName {
     background-image: url('../../assets/portal_img.png');
-    background-color: black;
     background-size: cover;
     background-position: center center;
     width: 60%;
@@ -118,14 +130,25 @@
     z-index: 2;
     display: grid;
     place-items: center;
+    animation: portalAnimation 2s;
+    width: 98px; height: 98px;
+}
+@keyframes portalAnimation {
+    from {
+        transform: scale(0) rotate(270deg);
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+    }
 }
 
 .h2Name {
     font-family: rmFont;
     font-size: 2.3vw;
     color: var(--focus-color);
+    text-shadow: 0.5px 0.5px 1px red, 0 0 1em black, 0 0 0.2em white;
     position: absolute;
-    top: 2.25vw;
+    margin-top: auto;
 }
 
 .divOriginName {
