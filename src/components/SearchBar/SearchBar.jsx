@@ -13,7 +13,7 @@ export default function SearchBar(props) {
       <div className={styles.divWrap}>
          <div className={styles.divSearch}>
             <input className={styles.inputSearch} onChange={handleChange} type='search' placeholder='Write a number' />
-            <button className={styles.buttonSearch} onClick={() => onSearch(id)}>Agregar</button>
+            <button className={styles.buttonSearch} onClick={() => onSearch(id)}>ADD</button>
             <i className="fa fa-search"></i>
          </div>
       </div>
