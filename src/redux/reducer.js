@@ -1,4 +1,4 @@
-import { ADD_FAV, REMOVE_FAV, FILTER_CARDS, ORDER_CARDS} from './action_types'
+import { ADD_FAV, REMOVE_FAV, REMOVE_ALL, FILTER_CARDS, ORDER_CARDS} from './action_types'
 
 const initialState = {
     myFavorites: [],
@@ -24,6 +24,13 @@ const rootReducer = (state = initialState, action) => {
                 ),
             };
 
+            case REMOVE_ALL:
+                return {
+                    ...state,
+                    myFavorites: [],
+                    allCharacters: [],
+                };
+
         case FILTER_CARDS:
             return {
                 ...state,
@@ -33,13 +40,13 @@ const rootReducer = (state = initialState, action) => {
         case ORDER_CARDS:
             return {
                 ...state,
-                myFavorites: state.allCharacters.sort((x,y) => {
-                    if(action.payload === 'A'){
-                        return x.id - y.id;
-                    } else {
-                        return y.id - x.id;
-                    }
-                })
+                    myFavorites: state.myFavorites.sort((x,y) => {
+                        if(action.payload === 'A'){
+                            return x.id - y.id;
+                        } else {
+                            return y.id - x.id;
+                        }
+                    })
             };
 
         default:

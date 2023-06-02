@@ -35,8 +35,8 @@ const Favorites = () => {
             </select>
             <label className={styles.labelFilter}>Order by:</label>
             <select className={styles.optionGroupFilter} onChange={handleOrder}>
-               <option className={styles.optionFilter} value="A">Ascendente</option>
-               <option className={styles.optionFilter} value="D">Descendente</option>
+               <option className={styles.optionFilter} value="A">Ascending</option>
+               <option className={styles.optionFilter} value="D">Descending</option>
 
             </select>
          </div>

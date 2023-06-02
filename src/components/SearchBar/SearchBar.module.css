@@ -20,12 +20,13 @@
 }
 
 .divSearch {
-    width: 80%;
+    width: 90%;
     position: relative;
     display: flex;
 }
 
 .inputSearch {
+    font-size: 0.7em;
     width: 100%;
     border: 3px solid var(--hightlight-color);
     border-right: none;
@@ -50,5 +51,18 @@
     cursor: pointer;
     font-size: 1.8vw;
 }
+
+.buttonRandom {
+    width: 40%;
+    margin-left: 0.2vw;
+    border: 3px solid var(--hightlight-color);
+    background: var(--hightlight-color);
+    text-align: center;
+    color: #fff;
+    border-radius: 1vw;
+    cursor: pointer;
+    font-size: 1.8vw;
+}
+
 
 

@@ -15,11 +15,11 @@ function App() {
    const [access, setAccess] = useState(false);
    let location = useLocation();
 
-   //const EMAIL = 'admin@mail.com'
-   //const PASSWORD = 'abcd123'
-   //userData.password === PASSWORD && userData.email === EMAIL
+   const EMAIL = 'admin@mail.com'
+   const PASSWORD = 'abcd123'
+      
    function login(userData) {
-      if (true) {
+      if (userData.password === PASSWORD && userData.email === EMAIL) {
          setAccess(true);
          navigate('/home');
       }
@@ -41,6 +41,18 @@ function App() {
       } else {
          window.alert('¡No hay personajes con este ID!');
       }
+   }
+
+   const onRandom = () => {
+      let min = 1;
+      let max = 826;
+      for (let i = 0; i < 10; i++ ){
+         onSearch(Math.floor((Math.random() * (max - min + 1)) + min));
+      }
+   }
+
+   const onClear = () => {
+      setCharacters([]);
    }
 
    const onClose = (id) => {
@@ -69,7 +81,7 @@ function App() {
    return (
       <div className='App'>
          { location.pathname !== '/'
-            ? <Nav  onSearch={onSearch}/>
+            ? <Nav  onSearch={onSearch} onRandom={onRandom} onClear={onClear}/>
             : <></>
          }
          

@@ -32,7 +32,7 @@ export default function Form(props) {
         <div className={styles.divLogin}>
             <form className={styles.form}>
                 <div>
-                    <label className={styles.label} htmlFor='email'>email:</label><br />
+                    <label className={styles.label} htmlFor='email'>email(admin@mail.com):</label><br />
                     <input type='text'
                         className={errors.email.length !== 0
                                     ?styles.inputIncorrect
@@ -46,7 +46,7 @@ export default function Form(props) {
                         :<></>}
                 </div>
                 <div>
-                    <label className={styles.label} htmlFor='password'>password:</label><br />
+                    <label className={styles.label} htmlFor='password'>password(abcd123):</label><br />
                     <input type='text'
                         className={errors.password.length !== 0
                                     ?styles.inputIncorrect
