@@ -3,10 +3,10 @@ import { useState } from 'react'
 import validate from './validation'
 
 export default function Form(props) {
-    const [userData, setUserData] = useState({
-        email: '',
-        password: ''
-     });
+        const [userData, setUserData] = useState({
+            email: '',
+            password: ''
+        });
 
      const [errors, setErrors] = useState({
         email: [],

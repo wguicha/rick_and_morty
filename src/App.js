@@ -15,14 +15,23 @@ function App() {
    const [access, setAccess] = useState(false);
    let location = useLocation();
 
-   const EMAIL = 'admin@mail.com'
-   const PASSWORD = 'abcd123'
-      
-   function login(userData) {
+   //const EMAIL = 'admin@mail.com'
+   //const PASSWORD = 'abcd123'
+   const URL = 'http://localhost:3001/rickandmorty/'
+
+   function login({ email, password }) {
+      axios(`${URL}/login?email=${email}&password=${password}`)
+      .then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home');
+      })
+      /*
       if (userData.password === PASSWORD && userData.email === EMAIL) {
          setAccess(true);
          navigate('/home');
       }
+      */
    }
 
    useEffect(() => {
@@ -33,11 +42,18 @@ function App() {
       if(validateDuplicate(id)){
          window.alert('¡Este personaje ya existe!');
       } else if (validataId(id)) {
-         axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-            if (data.name) {
-               setCharacters((oldChars) => [...oldChars, data]);
-            }
-         });
+         //`https://rickandmortyapi.com/api/character/${id}`
+         try{
+            axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+               if (data.name) {
+                  setCharacters((oldChars) => [...oldChars, data]);
+               }else{
+                  throw Error('Error en la comunicacion')
+               }
+            });
+         } catch (err){
+            window.alert(err.message);
+         }
       } else {
          window.alert('¡No hay personajes con este ID!');
       }
