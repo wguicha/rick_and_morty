@@ -19,14 +19,22 @@ function App() {
    //const PASSWORD = 'abcd123'
    const URL = 'http://localhost:3001/rickandmorty/'
 
-   function login({ email, password }) {
-      axios(`${URL}/login?email=${email}&password=${password}`)
-      .then(({ data }) => {
+   async function login({ email, password }) {
+
+      try{
+         const { data } = await axios(`${URL}/login?email=${email}&password=${password}`)
+
          const { access } = data;
          setAccess(data);
          access && navigate('/home');
-      })
+      } catch({response}){
+         const { data } = response;
+         alert(data.message)
+      }
       /*
+            .then(({ data }) => {
+
+      })
       if (userData.password === PASSWORD && userData.email === EMAIL) {
          setAccess(true);
          navigate('/home');
@@ -38,19 +46,16 @@ function App() {
       !access && navigate('/');
    }, [access, navigate]);
 
-   const onSearch = (id) => {
+   const onSearch = async (id) => {
       if(validateDuplicate(id)){
          window.alert('¡Este personaje ya existe!');
       } else if (validataId(id)) {
          //`https://rickandmortyapi.com/api/character/${id}`
          try{
-            axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+            const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
                if (data.name) {
                   setCharacters((oldChars) => [...oldChars, data]);
-               }else{
-                  throw Error('Error en la comunicacion')
-               }
-            });
+               }            
          } catch (err){
             window.alert(err.message);
          }
@@ -81,7 +86,8 @@ function App() {
       let duplicated = false;
 
       characters.forEach((char) => {
-         if (char.id === Number(id)){
+
+         if (Number(char.id) === Number(id)){
             duplicated = true;
          }
       })
