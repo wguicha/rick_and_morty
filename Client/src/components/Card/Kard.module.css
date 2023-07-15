@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16pt;
+}
+
+:root {
+    --focus-color: #9FFCFD;
+    --strong-color: 	#7c3e1d;
+    --light-color: #f9bf1e;
+    --hightlight-color: #16ff00;
+    --blue-color: #1e06f6;
+}
+
+    
+@font-face {
+    font-family: rmFont;
+    src: url('../../assets/get_schwifty.ttf');
+}
+
+.divCard {
+    width: 24.5vw;
+    height: 24.5vw;
+    margin: 1vw 0;
+}
+
+.divImg {
+    border-radius: 7.3%;
+    width: 80%;
+    height: 80%;
+    position: relative;
+    background-color: var(--focus-color);
+    margin-bottom: 20.4%;
+    margin-right: 20.4%;
+}
+
+.divImg img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 7.4%;
+    position: absolute;
+    top: -1.8%;
+    left: 1.8%;
+    z-index: 1;
+
+}
+
+.divFavIcon {
+    font-size: 2vw;
+    background-color: var(--blue-color);
+    width: 20%;
+    height: 28%;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0.6%;
+    left: 3.6%;
+    z-index: 2;
+}
+
+.h2Id {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: 1em;
+    color: grey;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.h2IdRed {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: 1em;
+    color: red;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.h2StatusAlive{
+    color: green;
+}
+
+.h2StatusDead{
+    color: red;
+}
+
+.divStatusAlive {
+    background-color: var(--focus-color);
+    background-image: url('../../assets/alive_status.png');
+    background-size: cover;
+    background-position: center center;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.41%;
+    right: 2.3%;
+    z-index: 2;
+}
+
+.divStatusDead {
+    background-color: red;
+    background-image: url('../../assets/dead_status.png');
+    background-size: cover;
+    background-position: center center;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.41%;
+    right: 2.3%;
+    z-index: 2;
+}
+
+.divName {
+    background-image: url('../../assets/portal_img.png');
+    background-size: cover;
+    background-position: center center;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -4.5vw;
+    right: -4.5vw;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    animation: portalAnimation 2s;
+    width: 98px; height: 98px;
+}
+@keyframes portalAnimation {
+    from {
+        transform: scale(0) rotate(270deg);
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.h2Name {
+    font-family: rmFont;
+    font-size: 1em;
+    color: var(--focus-color);
+    text-shadow: 0.5px 0.5px 1px red, 0 0 1em black, 0 0 0.2em white;
+    position: absolute;
+    margin-top: auto;
+}
+
+.divOriginName {
+    max-width: 65%;
+    position: absolute;
+    color: var(--hightlight-color);
+    top: 19.6vw;
+    left: 0.4vw;
+    z-index: 2;
+}
+
+.h2OriginName {
+    justify-content: left;
+    font-size: 0.9vw;
+}
+
+.buttonClose {
+    border-radius: 50%;
+    background-color: var(--light-color);
+    color: red;
+    font-size: 3vw;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    bottom: 1vw;
+    left: 0.9vw;
+    z-index: 2;
+}
+
+.buttonClose:hover {
+    box-shadow: 1px 3px 3px #CE152A;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px){
+    .divCard {
+        width: 98vw;
+        height: 98vw;
+        margin: 1vw 0;
+    }
+
+    .divOriginName {
+        top: 65vw;
+        left: 19vw;
+    }
+    
+    .h2OriginName {
+        font-size: 0.7em;
+    }
+
+    .buttonClose {
+        font-size: 10vw;
+    }
+
+    .divFavIcon{
+        font-size: 5vw;
+    }
+}
+
+
+

@@ -1,0 +1,11 @@
+:root {
+   --focus-color: #9FFCFD;
+   --strong-color: 	#7c3e1d;
+   --light-color: #f9bf1e;
+   --hightlight-color: #16ff00;
+   --blue-color: #1e06f6;
+}
+
+.App {
+   text-align: center;
+}

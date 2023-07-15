@@ -1,0 +1,52 @@
+.divLogin{
+    background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+    border-radius: 1.5vw;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 20px;
+    margin-top: 5vh;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+}
+
+.label{
+    color: white;
+}
+
+.inputIncorrect{
+    border: 2px solid red;
+    background-color: rgb(240, 130, 130);
+}
+
+.inputCorrect{
+    border: 2px solid green;
+    background-color: rgb(145, 240, 145);
+}
+
+.p {
+    color: red;
+    font-size: 0.7em;
+    text-shadow: 0.5px 0.5px 1px red, 0 0 1em white, 0 0 0.2em white;
+}
+
+.buttonSubmit {
+    margin: auto;
+    margin-top: 2vw;
+    width: 80%;
+}
+
+.buttonSubmit {
+    width: 40%;
+    border: 3px solid var(--hightlight-color);
+    background: var(--hightlight-color);
+    text-align: center;
+    color: #fff;
+    border-radius: 1vw;
+    cursor: pointer;
+    font-size: 1.8vw;
+}
