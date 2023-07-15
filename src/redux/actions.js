@@ -8,12 +8,12 @@ export const addFav = (payload) => {
         try {
             await axios.post(`${URL}fav`, payload).then(({ data }) => {
                 return dispatch({
-                   type: ADD_FAV,
-                   payload: data,
+                    type: ADD_FAV,
+                    payload: data,
                 });
              });
         } catch (error) {
-            console.error(error);
+            console.error(error.message);
         }
     }
 }

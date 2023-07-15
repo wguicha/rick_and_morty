@@ -48,6 +48,7 @@
 }
 
 .divFavIcon {
+    font-size: 2vw;
     background-color: var(--blue-color);
     width: 20%;
     height: 28%;
@@ -202,6 +203,10 @@
 
     .buttonClose {
         font-size: 10vw;
+    }
+
+    .divFavIcon{
+        font-size: 5vw;
     }
 }
 
